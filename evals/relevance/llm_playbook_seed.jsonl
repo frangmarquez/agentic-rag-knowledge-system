@@ -1,0 +1,5 @@
+{"query_id":"q_model_cost","query":"Which strategies reduce LLM cost for repeated prompts?","relevant_terms":["prompt caching","semantic caching","Monitor spending"],"metadata":{"source_uri":"llm-playbook.md"}}
+{"query_id":"q_rag_quality","query":"How should a RAG system improve retrieval quality beyond plain vector search?","relevant_terms":["Hybrid search","Re-ranking","Metadata filtering"],"metadata":{"source_uri":"llm-playbook.md"}}
+{"query_id":"q_agent_framework","query":"Which framework is best for complex stateful AI agents?","relevant_terms":["LangGraph","Graph-based orchestration"],"metadata":{"source_uri":"llm-playbook.md"}}
+{"query_id":"q_eval_metrics","query":"What should we evaluate for relevance and faithfulness in AI systems?","relevant_terms":["Faithfulness","Hallucination rate","recall@k"],"metadata":{"source_uri":"llm-playbook.md"}}
+{"query_id":"q_vector_databases","query":"Which vector databases are listed for embeddings and vector search?","relevant_terms":["Qdrant","pgvector","FAISS"],"metadata":{"source_uri":"llm-playbook.md"}}

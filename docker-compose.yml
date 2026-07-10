@@ -1,0 +1,9 @@
+services:
+  qdrant:
+    # ponytail: local dev image; pin a version/digest before release.
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ./qdrant_storage:/qdrant/storage

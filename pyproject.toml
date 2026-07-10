@@ -1,18 +1,55 @@
 [project]
 name = "agentic-rag-knowledge-system"
 version = "0.1.0"
-description = ""
+description = "Production-style Agentic RAG knowledge system with retrieval evaluation and citation-grounded answers."
 authors = [
     {name = "Francisco Marquez",email = "fcoj.mar.gon@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12, <3.14"
 dependencies = [
+    "pydantic-settings (>=2.14.2,<3.0.0)",
+    "pydantic (>=2.13.4,<3.0.0)",
+    "sentence-transformers (>=5.6.0,<6.0.0)",
+    "ipykernel (>=7.3.0,<8.0.0)",
+    "ipywidgets (>=8.1.8,<9.0.0)",
+    "jupyterlab-widgets (>=3.0.16,<4.0.0)",
+    "tqdm (>=4.68.3,<5.0.0)",
+    "torch (>=2.12.1,<3.0.0)",
+    "torchvision (>=0.27.1,<0.28.0)",
+    "qdrant-client (>=1.18.0,<2.0.0)"
 ]
 
 [tool.poetry]
-package-mode = false
+package-mode = true
+packages = [
+    {include = "agentic_rag_knowledge_system", from = "src"}
+]
+
+[[tool.poetry.source]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+priority = "explicit"
+
+
+[tool.poetry.dependencies]
+torch = {source = "pytorch-cu126"}
+torchvision = {source = "pytorch-cu126"}
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = [
+    "--strict-config",
+    "--strict-markers",
+    "-p",
+    "no:cacheprovider"
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)"
+]

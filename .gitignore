@@ -1,2 +1,32 @@
-# Not-allowed file extensions
-*.md
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+
+# Test, lint, and coverage artifacts
+.pytest_cache/
+pytest-cache-files-*/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+.vscode/*
+# Runtime outputs
+logs/
+*.log
+data/raw/
+data/processed/
+reports/generated/
+qdrant_storage/
