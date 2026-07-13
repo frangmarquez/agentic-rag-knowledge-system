@@ -30,3 +30,6 @@ data/raw/
 data/processed/
 reports/generated/
 qdrant_storage/
+
+# Extension-specific files
+*.pckl

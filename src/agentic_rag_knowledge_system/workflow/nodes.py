@@ -109,7 +109,9 @@ def generate_answer(state: AgentState) -> AgentState:
     """Create a deterministic placeholder answer from available evidence."""
 
     evidence = _available_evidence(state)
-    if not evidence:
+    if state.analysis is not None and not state.analysis.needs_retrieval:
+        answer = "This query does not require corpus retrieval."
+    elif not evidence:
         answer = "I do not have enough corpus evidence to answer this."
     else:
         citations = " ".join(f"[{item.citation_id}]" for item in evidence)
